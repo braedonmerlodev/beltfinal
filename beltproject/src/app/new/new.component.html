@@ -1,0 +1,19 @@
+<h2>Register a restaurant</h2>
+
+<p *ngIf = "validationError.errors.restaurant" class = "error">{{ validationError.errors.restaurant.message }}</p>
+<p *ngIf = "validationError.errors.cuisine" class = "error">{{ validationError.errors.cuisine.message}}</p>
+
+<form (submit)="onSubmit()">
+  
+  <title>Add a new restaurant:</title>
+
+  <label for="newRestaurant.restaurant">Restaurant Name:</label><br>
+  <input type="text" name="newRestaurant.restaurant" [(ngModel)]="newRestaurant.restaurant" placeholder="Bo">
+  <br><br><label for="newRestaurant.cuisine">Cuisine:</label><br>
+  <input type="text" name="newRestaurant.cuisine" [(ngModel)]="newRestaurant.cuisine" placeholder="American comfort">
+  <br><br>
+  <button [routerLink]="['/restaurants']">Cancel</button>
+  <input type="submit" value="Register">
+  
+</form>
+<br>

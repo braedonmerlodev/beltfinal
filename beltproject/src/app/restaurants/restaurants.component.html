@@ -1,0 +1,15 @@
+<a [routerLink]="['/new']">Add a new restaurant</a> 
+<table>
+  <tr>
+  <th>Restaurant:</th>
+  <th>Cuisine:</th>
+  <th>Actions Available:</th>
+  </tr>
+  <tr *ngFor="let i of data">
+  <td>{{i.restaurant}}</td>
+  <td>{{i.cuisine}}</td>
+  <td><a [routerLink]="['/reviews/' + i._id]">Read Reviews</a> 
+    <a [routerLink]="['/edit/' + i._id]">Update</a> 
+    <a [routerLink]="['/delete/' + i._id]">Delete</a> </td>
+  </tr>
+</table>

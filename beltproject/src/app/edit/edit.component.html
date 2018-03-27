@@ -1,0 +1,9 @@
+<p>Edit this restaurant</p>
+<h3 *ngIf="errMessage">{{errMessage.message}}</h3>
+ <form (submit)="onEdit(restaurant, restaurant._id)">
+    Restaurant Name: <input type="text" name="newRestaurant.restaurant" [(ngModel)]="restaurant.restaurant"><br>
+    Cuisine Type: <input type="text" name="newRestaurant.cuisine" [(ngModel)]="restaurant.cuisine"> <br>
+    <input type="submit" value="Submit">
+ </form>
+
+ <button [routerLink]="['/home']">Cancel</button>
